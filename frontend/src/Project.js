@@ -23,8 +23,8 @@ import {
 
 function Project() {
   const divider = useRef();
-  const socket = io("http://localhost:3001");
-  // const socket = io("https://code-lit.herokuapp.com/");
+  // const socket = io("http://localhost:3001");
+  const socket = io("https://code-lit.herokuapp.com/");
 
   const mySocketId = useRef();
   const friendSocketId = useRef();
