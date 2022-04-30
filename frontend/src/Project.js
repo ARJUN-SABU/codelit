@@ -8,6 +8,7 @@ import { auth, db } from "./firebase";
 
 //Components
 import Logo from "./Logo";
+import Navbar from "./Navbar";
 
 //CSS
 import "./styles/Project.css";
@@ -737,34 +738,25 @@ function Project() {
   }
   return (
     <div className="project">
-      <nav className="">
-        <Logo />
-        <p>{location.state.projectName}</p>
-        <p>{myPeerId}</p>
-        <button
-          onClick={() => {
-            console.log("My SOcket Id: ", mySocketId.current);
-            console.log("Friend SOcket Id: ", friendSocketId.current);
-          }}
-        >
-          See Socket IDs
-        </button>
-        <button onClick={loadPrevCode}>Load Previous Code</button>
-
-        {/* <div>
-          <button onClick={handleVideoPlayPause}>Play/Pause Video</button>
-          <button onClick={handleMuteUnmute}>Mute/Unmute</button>
-        </div> */}
-
-        <button onClick={saveProject}>Save</button>
-        <button onClick={handleSignOut}>SignOut</button>
-      </nav>
+      <Navbar
+        showGetStarted={false}
+        padding="10px 40px"
+        boxShadow="0 0 5px 0 #919191"
+        zIndex="1"
+        ProjectName={location.state.projectName}
+        showProjectOptions={true}
+        projectID={myPeerId}
+        loadPrevCode={loadPrevCode}
+        saveProject={saveProject}
+      />
       <div className="project_container">
         <div className="project_left">
-          <div onMouseDown={handleMouseDownRow} className="top_divider"></div>
+          <div onMouseDown={handleMouseDownRow} className="top_divider">
+            <p className="divider_content_name">HTML</p>
+          </div>
           <div className="project_left_top">
             <textarea
-              className="html_code"
+              className="html_code code_area_box"
               onInput={displayOutput}
               onCut={handleCut}
               onPaste={handlePaste}
@@ -772,10 +764,12 @@ function Project() {
               onKeyUp={handleKeyUp}
             />
           </div>
-          <div onMouseDown={handleMouseDownRow} className="row_divider"></div>
+          <div onMouseDown={handleMouseDownRow} className="row_divider">
+            <p className="divider_content_name">CSS</p>
+          </div>
           <div className="project_left_middle">
             <textarea
-              className="css_code"
+              className="css_code code_area_box"
               onInput={displayOutput}
               onCut={handleCut}
               onPaste={handlePaste}
@@ -783,10 +777,12 @@ function Project() {
               onKeyUp={handleKeyUp}
             />
           </div>
-          <div onMouseDown={handleMouseDownRow} className="row_divider"></div>
+          <div onMouseDown={handleMouseDownRow} className="row_divider">
+            <p className="divider_content_name">Javscript</p>
+          </div>
           <div className="project_left_bottom">
             <textarea
-              className="js_code"
+              className="js_code code_area_box"
               onInput={displayOutput}
               onCut={handleCut}
               onPaste={handlePaste}
@@ -805,7 +801,7 @@ function Project() {
 
       <div className="project_peers_parent">
         <div className="project_peers_options">
-          <div>
+          <div className="project_peers_options_left">
             <button onClick={() => hideAndShowVideo(0)}>
               <FiMinus />
             </button>
@@ -813,7 +809,7 @@ function Project() {
               <FiPlus />
             </button>
           </div>
-          <div>
+          <div className="project_peers_options_right">
             <button onClick={handleVideoPlayPause}>
               {videoPlay ? (
                 <BsFillCameraVideoFill />
@@ -827,9 +823,18 @@ function Project() {
           </div>
         </div>
         <div className="project_peers">
-          <video muted ref={myVideo} style={{ backgroundColor: "red" }}></video>
+          <video
+            muted
+            ref={myVideo}
+            className="peer_vid_1"
+            // style={{ backgroundColor: "red" }}
+          ></video>
 
-          <video ref={friendVideo} style={{ backgroundColor: "blue" }}></video>
+          <video
+            ref={friendVideo}
+            className="peer_vid_2"
+            // style={{ backgroundColor: "blue" }}
+          ></video>
         </div>
       </div>
     </div>

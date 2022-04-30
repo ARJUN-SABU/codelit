@@ -1,0 +1,134 @@
+.user_screen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.user_screen_content {
+  flex: 1;
+  display: flex;
+  padding: 70px 100px 150px;
+}
+
+.user_screen_left {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+.user_screen_right {
+  flex: 1;
+  height: 100%;
+  /* border: 1px solid black; */
+  box-shadow: 0 0 10px 0 rgb(206, 206, 206);
+}
+
+.user_screen_left_card {
+  padding: 40px;
+  margin: 10px 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px 0 rgb(206, 206, 206);
+}
+
+.user_screen_left_card p {
+  margin-bottom: 6px;
+  color: rgb(28, 28, 28);
+}
+
+.user_screen_left_card input {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: 1px dashed black;
+  border-radius: 5px;
+}
+
+.user_screen_left_card button {
+  background-color: #0568fd;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.user_screen_left_card button:hover {
+  background-color: #0955c8;
+}
+
+.user_screen_right {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 40px 0;
+  margin-left: 20px;
+  box-shadow: 0 0 10px 0 rgb(206, 206, 206);
+}
+
+.user_screen_right button {
+  background-color: #0568fd;
+  color: white;
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
+.user_screen_right button:hover {
+  background-color: #0955c8;
+}
+
+.user_screen_right_projects {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  overflow-y: scroll;
+}
+
+.user_screen_project {
+  display: flex;
+  align-items: center;
+  margin: 6px 0;
+  cursor: pointer;
+}
+
+.user_screen_project p {
+  border: 1px solid rgb(86, 86, 86);
+  border-radius: 20px;
+  padding: 10px 20px;
+  flex: 1;
+  /* box-shadow: 0 0 10px 0 rgb(206, 206, 206); */
+  /* background-color: red; */
+}
+
+.user_screen_project p:hover {
+  box-shadow: 0 0 10px 0 rgb(206, 206, 206);
+}
+
+.user_screen_project span {
+  border: 1px solid rgb(86, 86, 86);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  margin: 10px 20px;
+  border-radius: 100%;
+  font-size: 20px;
+}
+
+.user_screen_project span:hover {
+  box-shadow: 0 0 10px 0 rgb(206, 206, 206);
+}

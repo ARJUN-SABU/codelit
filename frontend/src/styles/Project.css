@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap");
 .project {
   width: 100vw;
   height: 100vh;
@@ -6,9 +7,41 @@
 }
 
 nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   padding: 10px 0px;
-  background-color: red;
+  /* background-color: #0568fd; */
+  /* background-color: lightgreen; */
+  /* background-color: black;
+  color: white; */
   width: 100vw;
+  border-bottom: 1px solid black;
+}
+
+.project_pro_name {
+  margin-left: 45px;
+  font-size: 20px;
+}
+
+.project_nav_options_right {
+  display: flex;
+  align-items: center;
+  margin-right: 45px;
+}
+
+.project_nav_options_right button {
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  background-color: #0568fd;
+  color: white;
+}
+
+.project_nav_options_right button {
+  margin-left: 20px;
 }
 
 .project_container {
@@ -33,7 +66,7 @@ nav {
 }
 
 .col_divider {
-  width: 40px;
+  width: 30px;
   height: 100%;
   background-color: black;
   cursor: col-resize;
@@ -44,6 +77,16 @@ nav {
   height: 40px;
   background-color: black;
   cursor: row-resize;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+.divider_content_name {
+  margin-left: 8px;
+  border: 1px dashed white;
+  font-size: 14px;
+  padding: 5px 10px;
 }
 
 .row_divider {
@@ -51,10 +94,15 @@ nav {
   height: 40px;
   background-color: black;
   cursor: row-resize;
+  display: flex;
+  align-items: center;
+  color: white;
 }
 
 .project_left_top {
-  background-color: pink;
+  /* background-color: pink; */
+  /* background: #2b2929; */
+  background: #071220;
   flex: 1;
   display: flex;
   align-items: center;
@@ -63,7 +111,10 @@ nav {
 }
 
 .project_left_middle {
-  background-color: orange;
+  /* background-color: orange; */
+  /* background: #2b2929; */
+  background: #071220;
+
   flex: 1;
   display: flex;
   align-items: center;
@@ -71,7 +122,9 @@ nav {
 }
 
 .project_left_bottom {
-  background-color: gray;
+  /* background-color: gray; */
+  /* background: #2b2929; */
+  background: #071220;
   flex: 1;
   display: flex;
   align-items: center;
@@ -83,9 +136,12 @@ textarea {
   height: 88%;
   resize: none;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
   background-color: transparent;
   border: none;
+  color: white;
+  line-height: 1.5;
+  font-family: "Courier Prime", monospace;
 }
 
 iframe {
@@ -100,21 +156,62 @@ iframe {
   position: absolute;
   right: 0;
   bottom: 0;
+  box-shadow: 0 0 5px 0 #a7a7a7;
 }
 
 .project_peers_options {
   display: flex;
-  background-color: yellow;
+  /* background-color: yellow; */
+  background-color: black;
+  padding: 5px 10px;
   justify-content: space-between;
 }
+.project_peers_options_left {
+  display: flex;
+}
 
+.project_peers_options_left button {
+  padding: 2px 3px;
+  margin: 6px 5px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+}
+.project_peers_options_left button:hover {
+  transform: scale(1.1);
+}
+
+.project_peers_options_right {
+  display: flex;
+}
+.project_peers_options_right button {
+  padding: 2px 3px;
+  margin: 6px 5px;
+  border: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.2s all ease-in;
+}
+.project_peers_options_right button:hover {
+  transform: scale(1.1);
+}
 .project_peers {
-  width: 400px;
+  width: 500px;
   height: 200px;
   background-color: black;
   display: flex;
 }
 .project_peers video {
-  width: 50%;
+  width: 235px;
   height: 100%;
+  background-color: #172230;
+  border-right: 10px solid black;
+}
+.peer_vid_1 {
+  border-left: 10px solid black;
 }
