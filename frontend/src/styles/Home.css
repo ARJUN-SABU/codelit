@@ -108,12 +108,11 @@
 .home_auth_card {
   display: flex;
   flex-direction: column;
-  /* border: 1px solid black; */
   padding: 60px 50px;
   margin: 20px;
   width: 400px;
   box-shadow: 0 0 10px 0 rgb(206, 206, 206);
-  /* height: 400px; */
+  background-color: white;
 }
 
 .home_auth_card p {
