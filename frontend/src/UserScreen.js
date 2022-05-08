@@ -26,7 +26,7 @@ function UserScreen(props) {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("User SignedIn ", user);
+        // console.log("User SignedIn ", user);
         const uid = user.uid;
         setCurrentUserId(uid);
 
@@ -34,7 +34,7 @@ function UserScreen(props) {
       } else {
         // User is signed out
         // ...
-        console.log("User signout");
+        // console.log("User signout");
         navigate("/");
       }
     });
@@ -47,7 +47,7 @@ function UserScreen(props) {
     let allProjects = [];
     querySnapshot.forEach((doc) => {
       // doc.data() is never undefined for query doc snapshots
-      console.log(doc.id, " => ", doc.data());
+      // console.log(doc.id, " => ", doc.data());
       allProjects.push(doc.id);
     });
 
@@ -72,7 +72,7 @@ function UserScreen(props) {
             <input ref={projectName} placeholder="Project Name"></input>
             <button
               onClick={() => {
-                console.log(projectName.current.value);
+                // console.log(projectName.current.value);
                 if (projectName.current.value != "") {
                   navigate(`/project`, {
                     state: {

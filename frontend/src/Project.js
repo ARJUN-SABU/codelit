@@ -52,7 +52,7 @@ function Project() {
       //onpopstate is fired when the history changes
       //when the back button is pressed, so I manually close
       //the camera as it wasn't closing on its own.
-      console.log("back-button-pressed");
+      // console.log("back-button-pressed");
       stream_1.current?.getTracks().forEach((track) => track.stop());
       stream_2.current?.getTracks().forEach((track) => track.stop());
       stream_3.current?.getTracks().forEach((track) => track.stop());
@@ -68,7 +68,7 @@ function Project() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("User SignedIn ", user);
+        // console.log("User SignedIn ", user);
         // console.log(user.uid);
         const uid = user.uid;
         setFireStoreUID(uid);
@@ -77,7 +77,7 @@ function Project() {
           let docRef = doc(db, uid, location.state.projectName);
           getDoc(docRef).then((docSnap) => {
             if (docSnap.exists()) {
-              console.log("Document data:", docSnap.data());
+              // console.log("Document data:", docSnap.data());
               document.querySelector(".html_code").value =
                 docSnap.data().html_code;
               document.querySelector(".css_code").value =
@@ -87,7 +87,7 @@ function Project() {
               displayOutput();
             } else {
               // doc.data() will be undefined in this case
-              console.log("No such document!");
+              // console.log("No such document!");
             }
           });
         }
@@ -95,7 +95,7 @@ function Project() {
       } else {
         // User is signed out
         // ...
-        console.log("User signout");
+        // console.log("User signout");
         navigate("/");
       }
     });
@@ -435,7 +435,7 @@ function Project() {
     } else if (sib_1.classList.contains("project_left_middle")) {
       let top_box = document.querySelector(".project_left_top");
       let fixed_top_height = Math.round(top_box.offsetHeight);
-      console.log(fixed_top_height);
+      // console.log(fixed_top_height);
       top_box.style.flex = `0 ${fixed_top_height}px`;
     }
 
@@ -527,7 +527,7 @@ function Project() {
           });
         },
         function (err) {
-          console.log("Failed to get local stream", err);
+          // console.log("Failed to get local stream", err);
         }
       );
     });
@@ -536,9 +536,9 @@ function Project() {
       conn.on("open", function () {
         // Receive Friend's socket id
         conn.on("data", function (data) {
-          console.log("Received", data);
+          // console.log("Received", data);
           // setFriendSocketId(data);
-          console.log(data);
+          // console.log(data);
           friendSocketId.current = data;
         });
 
@@ -573,9 +573,9 @@ function Project() {
         conn.on("open", function () {
           // Receive messages, i.e, receive the friend's socket id here.
           conn.on("data", function (data) {
-            console.log("Received", data);
+            // console.log("Received", data);
             // setFriendSocketId(data);
-            console.log(data);
+            // console.log(data);
             friendSocketId.current = data.socketId;
 
             let html = document.querySelector(".html_code");
@@ -620,7 +620,7 @@ function Project() {
             });
           },
           function (err) {
-            console.log("Failed to get local stream", err);
+            // console.log("Failed to get local stream", err);
           }
         );
       }, 1000);
@@ -645,7 +645,7 @@ function Project() {
           .forEach((track) => (track.enabled = false));
       },
       function (err) {
-        console.log("Failed to get local stream", err);
+        // console.log("Failed to get local stream", err);
       }
     );
   }
@@ -745,7 +745,7 @@ function Project() {
     signOut(auth)
       .then(() => {
         // Sign-out successful.
-        console.log("signed out");
+        // console.log("signed out");
         // setCurrentUser("No-Name");
       })
       .catch((error) => {
