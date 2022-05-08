@@ -45,7 +45,11 @@ function Navbar(props) {
       }}
     >
       {/* Logo */}
-      <Logo />
+      {props.isProjectPage === true ? (
+        <Logo isProjectPage={true} closeCamera={props.closeCamera} />
+      ) : (
+        <Logo />
+      )}
 
       {/* Project Name (if it's project page) */}
       {props.ProjectName && (
@@ -105,7 +109,15 @@ function Navbar(props) {
         )}
 
         {currentUser !== null && (
-          <div onClick={handleSignOut} className="navbar_useroptions">
+          <div
+            onClick={() => {
+              handleSignOut();
+              if (props.isProjectPage === true) {
+                props.closeCamera();
+              }
+            }}
+            className="navbar_useroptions"
+          >
             <p className="navbar_username">
               Hey,{"  "}
               <span>

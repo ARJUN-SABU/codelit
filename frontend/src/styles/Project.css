@@ -106,7 +106,8 @@ nav {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 18px;
   /* overflow-y: scroll; */
 }
 
@@ -118,7 +119,8 @@ nav {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  padding-left: 18px;
+  /* justify-content: center; */
 }
 
 .project_left_bottom {
@@ -128,11 +130,12 @@ nav {
   flex: 1;
   display: flex;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
+  padding-left: 18px;
 }
 
 textarea {
-  width: 95%;
+  width: 98%;
   height: 88%;
   resize: none;
   outline: none;

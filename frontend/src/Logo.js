@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 //CSS
 import "./styles/Logo.css";
 
-function Logo() {
+function Logo(props) {
   const navigate = useNavigate();
 
   return (
@@ -12,6 +12,9 @@ function Logo() {
       className="logo"
       onClick={() => {
         navigate("/");
+        if (props.isProjectPage === true) {
+          props.closeCamera();
+        }
       }}
     >
       <h1>
