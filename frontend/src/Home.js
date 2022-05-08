@@ -111,7 +111,7 @@ function Home() {
     <div className="home">
       <Navbar showGetStarted={true} openAuthSection={openAuthSection} />
 
-      <div
+      {/* <div
         style={{
           backgroundColor: "#0568fd",
           width: "500px",
@@ -135,7 +135,7 @@ function Home() {
           zIndex: "-1",
           position: "absolute",
         }}
-      ></div>
+      ></div> */}
 
       <div className="home_content">
         {/* Introduction Banner */}
@@ -150,7 +150,7 @@ function Home() {
                   paddingBottom: "2px",
                 }}
               >
-                robust IDE
+                Robust IDE
               </span>{" "}
               and built in{" "}
               <span

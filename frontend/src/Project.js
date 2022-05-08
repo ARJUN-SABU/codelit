@@ -57,6 +57,10 @@ function Project() {
     };
   }, []);
 
+  function closeCamera() {
+    stream_1.current?.getTracks().forEach((track) => track.stop());
+  }
+
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -748,6 +752,8 @@ function Project() {
         projectID={myPeerId}
         loadPrevCode={loadPrevCode}
         saveProject={saveProject}
+        isProjectPage={true}
+        closeCamera={closeCamera}
       />
       <div className="project_container">
         <div className="project_left">
@@ -818,7 +824,7 @@ function Project() {
               )}
             </button>
             <button onClick={handleMuteUnmute}>
-              {muted ? <BsFillMicFill /> : <BsFillMicMuteFill />}
+              {muted ? <BsFillMicMuteFill /> : <BsFillMicFill />}
             </button>
           </div>
         </div>
