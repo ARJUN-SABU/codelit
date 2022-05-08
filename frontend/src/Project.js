@@ -43,7 +43,7 @@ function Project() {
   const stream_3 = useRef(null);
 
   const [muted, setMuted] = useState(true);
-  const [videoPlay, setVideoPlay] = useState(true);
+  const [videoPlay, setVideoPlay] = useState(false);
 
   const [fireStoreUID, setFireStoreUID] = useState("");
 
@@ -54,11 +54,15 @@ function Project() {
       //the camera as it wasn't closing on its own.
       console.log("back-button-pressed");
       stream_1.current?.getTracks().forEach((track) => track.stop());
+      stream_2.current?.getTracks().forEach((track) => track.stop());
+      stream_3.current?.getTracks().forEach((track) => track.stop());
     };
   }, []);
 
   function closeCamera() {
     stream_1.current?.getTracks().forEach((track) => track.stop());
+    stream_2.current?.getTracks().forEach((track) => track.stop());
+    stream_3.current?.getTracks().forEach((track) => track.stop());
   }
 
   useEffect(() => {
@@ -511,6 +515,9 @@ function Project() {
           call.answer(stream); // Answer the call with an A/V stream.
           stream_2.current = stream;
           stream_2.current
+            .getVideoTracks()
+            .forEach((track) => (track.enabled = false));
+          stream_2.current
             ?.getAudioTracks()
             .forEach((track) => (track.enabled = false));
           call.on("stream", function (remoteStream) {
@@ -599,6 +606,9 @@ function Project() {
           function (stream) {
             stream_3.current = stream;
             stream_3.current
+              ?.getVideoTracks()
+              .forEach((track) => (track.enabled = false));
+            stream_3.current
               ?.getAudioTracks()
               .forEach((track) => (track.enabled = false));
             var call = peer.call(`${location.state.friendPeerId}`, stream);
@@ -627,8 +637,12 @@ function Project() {
       { video: true, audio: false },
       function (stream) {
         myVideo.current.srcObject = stream;
-        myVideo.current.play();
+        // myVideo.current.play();
+        myVideo.current.pause();
         stream_1.current = stream;
+        stream_1.current
+          .getVideoTracks()
+          .forEach((track) => (track.enabled = false));
       },
       function (err) {
         console.log("Failed to get local stream", err);
@@ -643,7 +657,7 @@ function Project() {
       // startVideo();
       // connectAndCallPeer();
       stream_1.current
-        .getVideoTracks()
+        ?.getVideoTracks()
         .forEach((track) => (track.enabled = true));
       stream_2.current
         ?.getVideoTracks()
