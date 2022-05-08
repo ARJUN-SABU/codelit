@@ -506,7 +506,7 @@ function Project() {
     //if we are getting a call
     peer.on("call", function (call) {
       getUserMedia(
-        { video: true, audio: true },
+        { video: true, audio: false },
         function (stream) {
           call.answer(stream); // Answer the call with an A/V stream.
           stream_2.current = stream;
@@ -592,7 +592,7 @@ function Project() {
           navigator.webkitGetUserMedia ||
           navigator.mozGetUserMedia;
         getMedia(
-          { video: true, audio: true },
+          { video: true, audio: false },
           function (stream) {
             stream_3.current = stream;
             var call = peer.call(`${location.state.friendPeerId}`, stream);
