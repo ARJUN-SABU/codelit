@@ -506,10 +506,13 @@ function Project() {
     //if we are getting a call
     peer.on("call", function (call) {
       getUserMedia(
-        { video: true, audio: false },
+        { video: true, audio: true },
         function (stream) {
           call.answer(stream); // Answer the call with an A/V stream.
           stream_2.current = stream;
+          stream_2.current
+            ?.getAudioTracks()
+            .forEach((track) => (track.enabled = false));
           call.on("stream", function (remoteStream) {
             // Show stream in some video/canvas element.
             friendVideo.current.srcObject = remoteStream;
@@ -592,9 +595,12 @@ function Project() {
           navigator.webkitGetUserMedia ||
           navigator.mozGetUserMedia;
         getMedia(
-          { video: true, audio: false },
+          { video: true, audio: true },
           function (stream) {
             stream_3.current = stream;
+            stream_3.current
+              ?.getAudioTracks()
+              .forEach((track) => (track.enabled = false));
             var call = peer.call(`${location.state.friendPeerId}`, stream);
             call.on("stream", function (remoteStream) {
               // Show stream in some video/canvas element.
