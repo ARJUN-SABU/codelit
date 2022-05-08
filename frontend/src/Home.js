@@ -29,7 +29,7 @@ function Home() {
   useEffect(() => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
-        console.log("User SignedIn ", user);
+        // console.log("User SignedIn ", user);
         const uid = user.uid;
 
         setCurrentUser(user);
@@ -38,7 +38,7 @@ function Home() {
       } else {
         // User is signed out
         // ...
-        console.log("User signout");
+        // console.log("User signout");
         setCurrentUser(null);
       }
     });
@@ -51,7 +51,7 @@ function Home() {
       signUpPass.current.value
     )
       .then((userCredentials) => {
-        console.log(userCredentials.user);
+        // console.log(userCredentials.user);
         // setCurrentUser(userCredentials.user.email);
         navigate("/user");
       })
@@ -79,7 +79,7 @@ function Home() {
       signInPass.current.value
     )
       .then((userCredentials) => {
-        console.log(userCredentials.user);
+        // console.log(userCredentials.user);
         navigate("/user");
         // setCurrentUser(userCredentials.user.email);
       })
