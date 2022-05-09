@@ -122,7 +122,7 @@ function UserScreen(props) {
 
         {/* Right Section */}
         <div className="user_screen_right">
-          <button onClick={loadProjects}>Load Existing Project</button>
+          <button onClick={loadProjects}>Load Existing Projects</button>
           <div className="user_screen_right_projects">
             {projects.map((project, idx) => (
               <div key={idx} className="user_screen_project">

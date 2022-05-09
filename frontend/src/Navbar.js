@@ -99,6 +99,7 @@ function Navbar(props) {
             onClick={() => {
               navigate("/user");
             }}
+            className="nav_get_started_button"
           >
             Get Started
           </button>

@@ -132,3 +132,29 @@
 .user_screen_project span:hover {
   box-shadow: 0 0 10px 0 rgb(206, 206, 206);
 }
+
+@media (min-width: 1500px) {
+  .user_screen_content {
+    padding: 70px 200px 150px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .user_screen_content {
+    padding: 70px 20px 150px;
+  }
+}
+
+@media (max-width: 900px) {
+  .user_screen_content {
+    flex-direction: column;
+    /* padding: 70px 20px 150px; */
+  }
+  .user_screen_right {
+    margin-left: 0;
+    padding-bottom: 30px;
+  }
+  .user_screen_left_card {
+    margin: 20px 0;
+  }
+}
