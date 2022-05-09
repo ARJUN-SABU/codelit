@@ -100,11 +100,13 @@ function Home() {
   function openAuthSection() {
     document.querySelector(".home_banner").style.width = "0";
     document.querySelector(".home_auth_section").style.width = "100%";
+    document.querySelector(".home_auth_section").style.height = "100%";
   }
 
   function closeAuthSection() {
     document.querySelector(".home_banner").style.width = "100%";
     document.querySelector(".home_auth_section").style.width = "0";
+    document.querySelector(".home_auth_section").style.height = "0";
   }
 
   return (

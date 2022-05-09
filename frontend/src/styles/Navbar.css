@@ -109,3 +109,9 @@
 .hide {
   display: none !important;
 }
+
+@media (max-width: 600px) {
+  .nav_get_started_button {
+    display: none;
+  }
+}
