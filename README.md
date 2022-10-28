@@ -5,4 +5,4 @@
 Tech Stack Used: React.js, Node.js, Firebase Firestore, Socket.io.</p>
 
 <h3> Check it out 🎉😋 </h3>
-<a href="https://code-lit.netlify.app/" target="_blank"></a>
+<a href="https://code-lit.netlify.app/" target="_blank">codelit</a>
